@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dxy-stack-classifier"
+version = "0.1.0"
+description = "Strict anti-leakage monthly DXY direction classification with stacking and SMOTE."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT License"}
+authors = [
+  {name = "Endi Zonana"}
+]
+dependencies = [
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dxy_stack*"]
+
+[tool.setuptools.package-data]
+dxy_stack = ["py.typed"]
+
+[project.scripts]
+dxy-run = "scripts.run_backtest:main"
